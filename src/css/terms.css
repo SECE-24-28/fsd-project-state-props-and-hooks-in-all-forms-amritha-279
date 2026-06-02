@@ -6,9 +6,9 @@ nav{ width:100%; padding:22px 8%; display:flex; justify-content:space-between; a
 .logo{ font-size:2rem; font-family:'Cinzel',serif; font-weight:700; color:#fff; letter-spacing:2px; }
 .logo img{ height:45px; width:auto; vertical-align:middle; margin-right:10px; }
 .logo span{ color:var(--gold); }
-nav ul{ display:none; }
-.logout-btn{ background:var(--gold); color:var(--primary) !important; padding:8px 20px; border-radius:30px; }
-.logout-btn:hover{ background:#b88d2d; }
+nav ul{ display:flex; gap:40px; list-style:none; }
+nav ul li a{ text-decoration:none; color:#fff; font-weight:500; transition:0.3s; position:relative; }
+nav ul li a:hover{ color:var(--gold); }
 
 .page-hero{ padding:140px 8% 50px; text-align:center; }
 .page-hero h1{ font-size:3.5rem; font-family:'Cinzel',serif; color:var(--primary); margin-bottom:12px; }

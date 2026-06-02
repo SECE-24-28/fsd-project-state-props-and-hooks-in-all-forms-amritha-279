@@ -12,14 +12,65 @@ function Login() {
     password: "",
   });
 
-  const ADMIN_EMAIL = "admin@natyalaya.com";
-  const ADMIN_PASS = "Admin123";
+  const [forgotStep, setForgotStep] = useState(0); // 0=closed, 1=email, 2=new password
+  const [forgotEmail, setForgotEmail] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [forgotError, setForgotError] = useState("");
+
+  const ADMIN_EMAIL = "admin@gmail.com";
+  const ADMIN_PASS = "admin1234";
+
+  const SAMPLE_USER = { email: "user@gmail.com", password: "user1234", firstName: "Sample User" };
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleForgotEmailSubmit = () => {
+    const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailReg.test(forgotEmail)) {
+      setForgotError("Enter a valid email address.");
+      return;
+    }
+    const stored = JSON.parse(localStorage.getItem("natyalaya_user"));
+    if (!stored || stored.email !== forgotEmail) {
+      setForgotError("No account found with this email.");
+      return;
+    }
+    setForgotError("");
+    setForgotStep(2);
+  };
+
+  const handleResetPassword = () => {
+    const passReg = /^(?=.*[A-Za-z])(?=.*\d).{6,}$/;
+    if (!passReg.test(newPassword)) {
+      setForgotError("Password must be at least 6 characters with letters and numbers.");
+      return;
+    }
+    if (newPassword !== confirmPassword) {
+      setForgotError("Passwords do not match.");
+      return;
+    }
+    const stored = JSON.parse(localStorage.getItem("natyalaya_user"));
+    localStorage.setItem("natyalaya_user", JSON.stringify({ ...stored, password: newPassword }));
+    setForgotStep(0);
+    setForgotEmail("");
+    setNewPassword("");
+    setConfirmPassword("");
+    setForgotError("");
+    alert("Password reset successfully! Please log in.");
+  };
+
+  const closeForgot = () => {
+    setForgotStep(0);
+    setForgotEmail("");
+    setNewPassword("");
+    setConfirmPassword("");
+    setForgotError("");
   };
 
   const loginUser = () => {
@@ -55,12 +106,21 @@ function Login() {
 
       alert("Welcome, Admin!");
 
-      navigate("/home");
+      navigate("/admin");
     } else {
       if (!passReg.test(password)) {
         return alert(
           "Password must contain letters and numbers and be at least 6 characters."
         );
+      }
+
+      if (email === SAMPLE_USER.email && password === SAMPLE_USER.password) {
+        sessionStorage.setItem(
+          "natyalaya_session",
+          JSON.stringify({ email, loggedIn: true, role: "user" })
+        );
+        alert(`Welcome back, ${SAMPLE_USER.firstName}!`);
+        return navigate("/home");
       }
 
       const stored = JSON.parse(
@@ -160,11 +220,71 @@ function Login() {
             />
           </div>
 
+          <div className="sample-creds">
+            {role === "user"
+              ? <p>Sample : <strong>user@gmail.com</strong> / <strong>user1234</strong></p>
+              : <p>Sample : <strong>admin@gmail.com</strong> / <strong>admin1234</strong></p>
+            }
+          </div>
+
           <div className="forgot">
-            <button className="forgot-btn" onClick={() => alert("Please contact admin to reset your password.")}>
+            <button className="forgot-btn" onClick={() => { setForgotStep(1); setForgotError(""); }}>
               Forgot Password?
             </button>
           </div>
+
+          {forgotStep > 0 && (
+            <div className="forgot-modal-overlay">
+              <div className="forgot-modal">
+                <button className="forgot-modal-close" onClick={closeForgot}>✕</button>
+
+                {forgotStep === 1 && (
+                  <>
+                    <h3>Forgot Password</h3>
+                    <p>Enter your registered email address.</p>
+                    <div className="form-group">
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        placeholder="Your registered email"
+                        value={forgotEmail}
+                        onChange={(e) => setForgotEmail(e.target.value)}
+                      />
+                    </div>
+                    {forgotError && <p className="forgot-error">{forgotError}</p>}
+                    <button className="submit-btn" onClick={handleForgotEmailSubmit}>Continue</button>
+                  </>
+                )}
+
+                {forgotStep === 2 && (
+                  <>
+                    <h3>Reset Password</h3>
+                    <p>Set a new password for <strong>{forgotEmail}</strong></p>
+                    <div className="form-group">
+                      <label>New Password</label>
+                      <input
+                        type="password"
+                        placeholder="New password"
+                        value={newPassword}
+                        onChange={(e) => setNewPassword(e.target.value)}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label>Confirm Password</label>
+                      <input
+                        type="password"
+                        placeholder="Confirm new password"
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
+                      />
+                    </div>
+                    {forgotError && <p className="forgot-error">{forgotError}</p>}
+                    <button className="submit-btn" onClick={handleResetPassword}>Reset Password</button>
+                  </>
+                )}
+              </div>
+            </div>
+          )}
 
           <button
             className="submit-btn"

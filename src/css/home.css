@@ -1,4 +1,6 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
     *{
       margin:0;
       padding:0;
@@ -98,12 +100,15 @@
     .logout-btn{
       background:var(--gold);
       color:var(--primary) !important;
-      padding:8px 20px;
+      padding:10px 22px;
       border-radius:30px;
+      font-weight:600;
+      transition:0.3s;
     }
 
     .logout-btn:hover{
       background:#b88d2d;
+      color:white !important;
     }
 
     /* HERO SECTION */
@@ -259,6 +264,9 @@
 
     .section-title p{
       color:#6a5544;
+      font-family:'Poppins', sans-serif;
+      font-size:1rem;
+      line-height:1.9;
     }
 
     .feature-container{
@@ -312,16 +320,30 @@
       align-items:center;
       justify-content:space-between;
       gap:60px;
+      width:100%;
+      box-sizing:border-box;
+    }
+
+    .about-image{
+      flex:0 0 480px;
+      width:480px;
     }
 
     .about-image img{
-      width:420px;
-      border-radius:30px;
+      width:480px;
+      height:320px;
+      object-fit:cover;
+      border-radius:16px;
       box-shadow:0 20px 40px rgba(0,0,0,0.12);
+      display:block;
+    }
+
+    .about-text{
+      flex:1;
     }
 
     .about-text h2{
-      font-size:3rem;
+      font-size:2rem;
       color:var(--primary);
       margin-bottom:20px;
       font-family:'Cinzel', serif;
@@ -336,14 +358,14 @@
     /* CTA SECTION */
 
     .cta-section{
-      background:#f7f2eb;
+      background:var(--primary);
       padding:100px 8%;
       text-align:center;
     }
 
     .cta-section h2{
-      font-size:4rem;
-      color:var(--primary);
+      font-size:2.5rem;
+      color:#fff;
       font-family:'Cinzel', serif;
       margin-bottom:25px;
     }
@@ -353,7 +375,7 @@
       margin:auto;
       line-height:1.8;
       font-size:1.2rem;
-      color:#4e3b2d;
+      color:var(--secondary);
       margin-bottom:40px;
     }
 
@@ -374,6 +396,72 @@
       color:white;
     }
 
+
+    /* FAQ SECTION */
+
+    .faq-section{
+      padding:90px 8%;
+      background:#fff6e9;
+    }
+
+    .faq-container{
+      max-width:850px;
+      margin:auto;
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .faq-item{
+      background:var(--white);
+      border-radius:16px;
+      border:1px solid rgba(127,32,32,0.12);
+      box-shadow:0 4px 15px rgba(0,0,0,0.05);
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .faq-item[open]{
+      border-color:var(--gold);
+      box-shadow:0 8px 25px rgba(127,32,32,0.12);
+    }
+
+    .faq-item summary{
+      padding:22px 28px;
+      font-weight:600;
+      font-size:1rem;
+      color:var(--primary);
+      cursor:pointer;
+      list-style:none;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .faq-item summary::after{
+      content:'+';
+      font-size:1.5rem;
+      color:var(--gold);
+      font-weight:400;
+      transition:0.3s;
+    }
+
+    .faq-item[open] summary::after{
+      content:'−';
+    }
+
+    .faq-item summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .faq-item p{
+      padding:0 28px 22px;
+      color:#5f4b3a;
+      line-height:1.9;
+      font-size:0.95rem;
+      border-top:1px solid rgba(201,163,78,0.3);
+      padding-top:16px;
+    }
 
     /* NEW FOOTER */
 
@@ -462,6 +550,16 @@
         text-align:center;
       }
 
+      .about-image{
+        flex:0 0 auto;
+        width:100%;
+      }
+
+      .about-image img{
+        width:100%;
+        height:350px;
+      }
+
       nav ul{
         display:none;
       }
@@ -484,11 +582,9 @@
         height:260px;
       }
 
-      .about-image img{
-        width:100%;
-      }
-
     }
+
+
 
     @media(max-width:768px){
 

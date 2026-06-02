@@ -153,6 +153,14 @@ function About() {
           </div>
 
           <div className="footer-box">
+            <h3>Customer Policy</h3>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms & Conditions</Link>
+            <Link to="/contact">Contact Us</Link>
+            <Link to="/home#faq">FAQ</Link>
+          </div>
+
+          <div className="footer-box">
             <h3>Contact</h3>
             <p>📍 Chennai, Tamil Nadu</p>
             <p>📞 +91 98765 43210</p>

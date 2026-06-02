@@ -306,47 +306,7 @@ function Privacy() {
 
       </div>
 
-      <section className="footer-section">
 
-        <div className="footer-container">
-
-          <div className="footer-box">
-            <h3>About Natyalaya</h3>
-
-            <p>
-              Preserving the sacred art of
-              Bharatanatyam through tradition,
-              discipline and excellence.
-            </p>
-          </div>
-
-          <div className="footer-box">
-            <h3>Quick Links</h3>
-
-            <Link to="/">Home</Link>
-            <Link to="/about">About</Link>
-            <Link to="/gallery">Gallery</Link>
-            <Link to="/classes">Class Schedules</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/register">Register</Link>
-          </div>
-
-          <div className="footer-box">
-            <h3>Contact</h3>
-
-            <p>📍 Chennai, Tamil Nadu</p>
-            <p>📞 +91 98765 43210</p>
-            <p>✉ info@natyalaya.com</p>
-          </div>
-
-        </div>
-
-        <div className="footer-bottom">
-          © 2026 Natyalaya |
-          Preserving Tradition Through Technology
-        </div>
-
-      </section>
     </>
   );
 }

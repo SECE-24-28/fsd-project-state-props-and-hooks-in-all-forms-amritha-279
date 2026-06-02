@@ -15,7 +15,7 @@ function Gallery() {
         </div>
 
         <ul>
-          <li><Link to="/home">Home</Link></li>
+          <li><Link to="/">Home</Link></li>
           <li><Link to="/about">About</Link></li>
           <li><Link to="/guru">Guru</Link></li>
           <li><Link to="/gallery">Gallery</Link></li>
@@ -42,7 +42,7 @@ function Gallery() {
         <div className="gallery-grid">
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery1.jpg")} alt="" /></div>
+            <img src={require("../images/gallery1.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Classical Performance</h3>
               <p>
@@ -53,7 +53,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery2.jpg")} alt="" /></div>
+            <img src={require("../images/gallery2.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Arangetram Ceremony</h3>
               <p>
@@ -64,7 +64,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery3.jpg")} alt="" /></div>
+            <img src={require("../images/gallery3.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Cultural Festival</h3>
               <p>
@@ -75,7 +75,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery4.jpg")} alt="" /></div>
+            <img src={require("../images/gallery4.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Temple Recital</h3>
               <p>
@@ -86,7 +86,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery5.jpg")} alt="" /></div>
+            <img src={require("../images/gallery5.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Dance Workshop</h3>
               <p>
@@ -97,7 +97,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery6.jpg")} alt="" /></div>
+            <img src={require("../images/gallery6.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Annual Celebration</h3>
               <p>
@@ -108,7 +108,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery7.jpg")} alt="" /></div>
+            <img src={require("../images/gallery7.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Group Performance</h3>
               <p>
@@ -119,7 +119,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery8.png")} alt="" /></div>
+            <img src={require("../images/gallery8.png")} alt="" />
             <div className="gallery-content">
               <h3>Traditional Costume</h3>
               <p>
@@ -130,7 +130,7 @@ function Gallery() {
           </div>
 
           <div className="gallery-card">
-            <div className="gallery-img-wrap"><img src={require("../images/gallery9.jpg")} alt="" /></div>
+            <img src={require("../images/gallery9.jpg")} alt="" />
             <div className="gallery-content">
               <h3>Student Showcase</h3>
               <p>
@@ -168,7 +168,7 @@ function Gallery() {
           <div className="footer-box">
             <h3>Quick Links</h3>
 
-            <Link to="/home">Home</Link>
+            <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/gallery">Gallery</Link>
             <Link to="/classes">Class Schedules</Link>

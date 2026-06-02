@@ -11,8 +11,8 @@ nav ul li a{ text-decoration:none; color:#fff; font-weight:500; transition:0.3s;
 nav ul li a::after{ content:''; position:absolute; width:0; height:2px; background:var(--gold); left:0; bottom:-6px; transition:0.4s; }
 nav ul li a:hover::after{ width:100%; }
 nav ul li a:hover{ color:var(--gold); }
-.logout-btn{ background:var(--gold); color:var(--primary) !important; padding:8px 20px; border-radius:30px; }
-.logout-btn:hover{ background:#b88d2d; }
+.logout-btn{ background:var(--gold); color:var(--primary) !important; padding:10px 22px; border-radius:30px; font-weight:600; transition:0.3s; }
+.logout-btn:hover{ background:#b88d2d; color:white !important; }
 
 .page-hero{ padding:150px 8% 60px; text-align:center; }
 .page-hero h1{ font-size:4rem; font-family:'Cinzel',serif; color:var(--primary); margin-bottom:15px; }

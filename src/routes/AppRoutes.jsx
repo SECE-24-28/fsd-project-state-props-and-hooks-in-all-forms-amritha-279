@@ -10,6 +10,14 @@ import Contact from "../pages/contact";
 import Register from "../pages/register";
 import Login from "../pages/login";
 import Signup from "../pages/signup";
+import Privacy from "../pages/privacy";
+import Terms from "../pages/terms";
+import Admin from "../pages/admin";
+import Statistics from "../pages/statistics";
+import Revenue from "../pages/revenue";
+import Messages from "../pages/messages";
+import GalleryManager from "../pages/gallerymanager";
+
 
 function AppRoutes() {
   return (
@@ -24,6 +32,13 @@ function AppRoutes() {
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/admin" element={<Admin />} />
+      <Route path="/statistics" element={<Statistics />} />
+      <Route path="/revenue" element={<Revenue />} />
+      <Route path="/messages" element={<Messages />} />
+      <Route path="/gallerymanager" element={<GalleryManager />} />
     </Routes>
   );
 }

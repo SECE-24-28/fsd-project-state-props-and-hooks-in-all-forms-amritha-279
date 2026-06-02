@@ -146,6 +146,47 @@ function Home() {
         </Link>
       </section>
 
+      <section className="faq-section" id="faq">
+        <div className="section-title">
+          <h2>Frequently Asked Questions</h2>
+          <p>Everything you need to know about Natyalaya</p>
+        </div>
+
+        <div className="faq-container">
+
+          <details className="faq-item">
+            <summary>What is the minimum age to join Natyalaya?</summary>
+            <p>We welcome students from age 5 and above. Our Junior Batch is specially designed for children between 5–14 years with age-appropriate training methods.</p>
+          </details>
+
+          <details className="faq-item">
+            <summary>Do I need prior dance experience to enroll?</summary>
+            <p>No prior experience is required. We have Beginner Batches for absolute newcomers, as well as Intermediate and Advanced batches for those with prior training.</p>
+          </details>
+
+          <details className="faq-item">
+            <summary>What are the class timings?</summary>
+            <p>We offer Morning (6:30 AM – 11:00 AM), Evening (5:00 PM – 9:30 PM), and Weekend batches (8:00 AM – 6:00 PM) to suit different schedules.</p>
+          </details>
+
+          <details className="faq-item">
+            <summary>How do I register for a class?</summary>
+            <p>You can register online through our Register page. Fill in your personal details, select your preferred batch, and submit the form. Our team will confirm your enrollment.</p>
+          </details>
+
+          <details className="faq-item">
+            <summary>What is the fee structure?</summary>
+            <p>Fees vary by batch: Beginner ₹1500/month, Intermediate ₹2000/month, Advanced ₹2500/month, Junior ₹1200/month, Arangetram Preparation ₹5000/month, and Weekend Workshops ₹1000/workshop.</p>
+          </details>
+
+          <details className="faq-item">
+            <summary>What is Arangetram and how do I prepare for it?</summary>
+            <p>Arangetram is a student's debut solo performance — a significant milestone in Bharatanatyam. We offer a dedicated Arangetram Preparation batch with one-on-one mentoring, stage rehearsals, and costume guidance.</p>
+          </details>
+
+        </div>
+      </section>
+
       <section className="footer-section">
         <div className="footer-container">
           <div className="footer-box">
@@ -165,6 +206,14 @@ function Home() {
             <Link to="/classes">Class Schedules</Link>
             <Link to="/contact">Contact</Link>
             <Link to="/register">Register</Link>
+          </div>
+
+          <div className="footer-box">
+            <h3>Customer Policy</h3>
+            <Link to="/privacy">Privacy Policy</Link>
+            <Link to="/terms">Terms & Conditions</Link>
+            <Link to="/contact">Contact Us</Link>
+            <Link to="/home#faq">FAQ</Link>
           </div>
 
           <div className="footer-box">
